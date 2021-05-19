@@ -1,0 +1,12 @@
+# Misc
+**/.nvimlog
+**/.idea/
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# TypeScript
+build/
