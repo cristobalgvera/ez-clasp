@@ -47,3 +47,12 @@ Project has preloaded next libraries that will help you to have a better develop
 In case you want ignore certain files to be pushed, you can add them to ***.claspignore*** file. You can see in it some already ignored base directories.
 
 *P.D.: Of course you can delete this **README** file and the **docs/** folder.*
+
+---
+
+## 💼 Example projects
+
+You can found here some practical example uses of this template in order to help you to understand better how to link it to a Google Apps Script project
+
+- **[Project one](https://github.com/cristobalgvera/automatic-fup)** *(include connection to Firebase)*
+- **[Project two](https://github.com/cristobalgvera/open-orders-update)**
