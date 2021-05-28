@@ -1,7 +1,7 @@
 {
-  "name": "ts-clasp-starter-pack",
+  "name": "ts-apps-script-starter",
   "version": "1.0.0",
-  "description": "Google Apps Script project starter pack with TypeScript support",
+  "description": "Google Apps Script starter project with TypeScript support",
   "main": "build/index.js",
   "scripts": {
     "build": "rollup --config",
@@ -12,28 +12,22 @@
     "dev": "clasp push --watch"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.15",
-    "@babel/plugin-transform-runtime": "^7.13.15",
-    "@babel/preset-env": "^7.13.15",
+    "@babel/core": "^7.14.3",
+    "@babel/plugin-transform-runtime": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
     "@babel/preset-typescript": "^7.13.0",
     "@google/clasp": "^2.3.2",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
-    "@types/google-apps-script": "^1.0.31",
-    "@types/node": "^12.20.10",
+    "@types/google-apps-script": "^1.0.33",
+    "@types/node": "^15.6.1",
     "gts": "^3.1.0",
-    "rollup": "^2.45.2",
-    "typescript": "^4.2.4"
+    "rollup": "^2.50.3",
+    "typescript": "^4.3.2"
   },
   "keywords": [
-    "clasp",
-    "google-apps-script",
-    "gas",
-    "typescript",
-    "rollup-js",
-    "prettier",
-    "eslint",
-    "javascript"
+    "clasp", "google-apps-script", "gas", "typescript",
+    "rollup-js", "prettier", "eslint", "javascript", "babel"
   ],
   "author": "cristobalgvera",
   "license": "ISC"

@@ -24,15 +24,11 @@ clasp login # And access to your Google account
 npm run deploy
 ```
 
----
-
 ## 🤔 How to push HTML or non TypeScript files?
 
 If you need to push some other files that will not be included in transpilation process, you can put them into ***app/*** folder *(or whatever location you want if you change ***.claspignore*** configuration)*.
 
 Put your assets in here, meaning some HTML or any JavaScript file you need to be pushed to Google Apps Script.
-
----
 
 ## 🍕 Extras
 
@@ -51,8 +47,6 @@ Project has preloaded these libraries that will help you to have a better develo
 In case you want ignore certain files to be pushed, you can add them to ***.claspignore*** file. You can see in it some already ignored base directories.
 
 *P.D.: Of course you can delete this **README** file and the **docs/** folder.*
-
----
 
 ## 💼 Example projects
 
