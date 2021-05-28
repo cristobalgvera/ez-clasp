@@ -5,8 +5,8 @@
 2. Using the new created repository URL, clone it following next steps
 
 ``` bash
-git clone https://github.com/YOUR-USER-NAME/YOUR-REPOSITORY-NAME.git
-cd YOUR-REPOSITORY-NAME
+git clone https://github.com/YOUR_USER_NAME/YOUR_REPOSITORY_NAME.git
+cd YOUR_REPOSITORY_NAME
 npm install
 
 # In case you don't have clasp installed...
@@ -14,7 +14,7 @@ npm install -g @google/clasp
 clasp login # And access to your Google account
 ```
 
-3. Add your Apps Script ID inside ***.clasp.json*** file located in root in his ***scriptId*** key.
+3. Add your Apps Script ID inside ***.clasp.json*** file located in root in the ***scriptId*** key.
 
 ![Project configuration](docs/images/project-configuration.png)
 
