@@ -1,6 +1,6 @@
 # 💻 TL; DR
 
-1. Clone this repository using the ***"Use this template"*** button over repository files.
+1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking the ***"Use this template"*** button over repository files.
 
 2. Using the new created repository URL, clone it following next steps
 
@@ -54,3 +54,4 @@ You can found here some practical example uses of this template in order to help
 
 - **[Project one](https://github.com/cristobalgvera/automatic-fup)** *(include connection to Firebase)*
 - **[Project two](https://github.com/cristobalgvera/open-orders-update)**
+- **[Project three](https://github.com/cristobalgvera/cmic-credentials)**
