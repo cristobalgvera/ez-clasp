@@ -1,4 +1,4 @@
-# 💻 TL; DR
+# 💻 TL;DR:
 
 1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking the ***"Use this template"*** button over repository files.
 
