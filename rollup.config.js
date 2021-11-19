@@ -1,5 +1,6 @@
-import {babel} from '@rollup/plugin-babel';
-import {nodeResolve} from '@rollup/plugin-node-resolve';
+/* eslint-disable node/no-unpublished-require */
+const {babel} = require('@rollup/plugin-babel');
+const {nodeResolve} = require('@rollup/plugin-node-resolve');
 
 const extensions = ['.ts', '.js'];
 
@@ -11,12 +12,13 @@ const preventThreeShakingPlugin = () => {
         // let's not theeshake entry points, as we're not exporting anything in App Scripts
         return {id, moduleSideEffects: 'no-treeshake'};
       }
+
       return null;
     },
   };
 };
 
-export default {
+module.exports = {
   input: './src/index.ts',
   output: [
     {

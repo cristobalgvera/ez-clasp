@@ -1,13 +1,10 @@
+/* eslint-disable node/no-unpublished-require */
 module.exports = {
   presets: [
     [
       // ES features necessary for user's Node version
       require('@babel/preset-env').default,
-      {
-        targets: {
-          node: '12',
-        },
-      },
+      {targets: {node: '12'}},
     ],
     [require('@babel/preset-typescript').default],
   ],
