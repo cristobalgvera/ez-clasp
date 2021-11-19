@@ -4,11 +4,13 @@
   "description": "Google Apps Script starter project with TypeScript support",
   "main": "build/index.js",
   "scripts": {
-    "build": "rollup --config",
-    "build-dev": "rollup --config --watch",
+    "login": "clasp login",
     "lint": "gts lint",
     "fix": "gts fix",
+    "build": "rollup --config",
+    "push": "clasp push",
     "deploy": "npm run build & clasp push",
+    "build-dev": "rollup --config --watch",
     "dev": "clasp push --watch"
   },
   "devDependencies": {
@@ -37,5 +39,6 @@
     "babel"
   ],
   "author": "cristobalgvera",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
