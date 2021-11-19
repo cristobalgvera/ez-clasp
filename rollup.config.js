@@ -33,8 +33,9 @@ module.exports = {
       mainFields: ['jsnext:main', 'main'],
     }),
     babel({
-      extensions: ['ts'],
+      extensions,
       babelHelpers: 'runtime',
+      comments: false,
     }),
   ],
 };
