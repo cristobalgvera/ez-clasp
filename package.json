@@ -13,9 +13,9 @@
     "build": "rollup --config",
     "push": "clasp push",
     "deploy": "npm run build & npm run push",
-    "test:dev": "jest --watch",
-    "build:dev": "rollup --config --watch",
-    "push:dev": "clasp push --watch"
+    "test:watch": "npm run test -- --watch",
+    "build:watch": "npm run build -- --watch",
+    "push:watch": "npm run push -- --watch"
   },
   "dependencies": {},
   "devDependencies": {
