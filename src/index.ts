@@ -1,5 +1,7 @@
-import {hi} from './services/hello.service';
+import ByeService from './services/bye.service';
+import HelloService from './services/hello.service';
 
-function sayHi() {
-  hi('CLASP');
+function main() {
+  HelloService.sayHi('CLASP');
+  ByeService.sayBye('CLASP');
 }
