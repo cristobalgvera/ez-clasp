@@ -1,16 +1,11 @@
-/* eslint-disable node/no-unpublished-require */
 module.exports = {
   presets: [
-    [
-      // ES features necessary for user's Node version
-      require('@babel/preset-env').default,
-      {targets: {node: '12'}},
-    ],
-    [require('@babel/preset-typescript').default],
+    ['@babel/preset-env', {targets: {node: '12'}}],
+    ['@babel/preset-typescript'],
   ],
   plugins: [
     // Polyfills the runtime needed for async/await, generators, and friends
     // https://babeljs.io/docs/en/babel-plugin-transform-runtime
-    [require('@babel/plugin-transform-runtime').default],
+    ['@babel/plugin-transform-runtime'],
   ],
 };
