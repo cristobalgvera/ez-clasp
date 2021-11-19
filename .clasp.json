@@ -1,5 +1,4 @@
 {
   "scriptId": "YOUR_SCRIPT_ID",
-  "fileExtension": "ts",
   "rootDir": "."
 }
