@@ -4,7 +4,6 @@
 # except the extensions…
 !appsscript.json
 !build/**/*.js
-!build/**/*.js
 !app/**
 
 # ignore even valid files if in…
