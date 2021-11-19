@@ -41,6 +41,7 @@ Project has preloaded these libraries that will help you to have a better develo
 - Prettier.
 - RollupJS.
 - Babel.
+- Jest.
 
 ### ❗ Ignored files
 
