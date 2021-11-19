@@ -1,6 +1,6 @@
 // Functional approach
 const HelloService = {
-  sayHi: (name?: string) => console.log(`Hello, ${name ?? 'World'}!`),
+  sayHi: (name?: string): string => `Hello, ${name ?? 'World'}!`,
 };
 
 export default HelloService;

@@ -2,7 +2,10 @@
 import ByeService from './services/bye.service';
 import HelloService from './services/hello.service';
 
-function main() {
-  HelloService.sayHi('CLASP');
-  ByeService.sayBye('CLASP');
+function main(): void {
+  const hiMessage = HelloService.sayHi('CLASP');
+  const byeMessage = ByeService.sayBye('CLASP');
+
+  console.log(hiMessage);
+  console.log(byeMessage);
 }
