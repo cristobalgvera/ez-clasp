@@ -6,9 +6,11 @@
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
-    "login": "clasp login",
+    "clasp:login": "clasp login",
+    "clasp:create": "rimraf .clasp.json & clasp create",
     "lint": "gts lint",
     "fix": "gts fix",
+    "clean": "rimraf build/",
     "test": "jest",
     "build": "rollup --config",
     "push": "clasp push",
@@ -31,6 +33,7 @@
     "@types/node": "^16.4.5",
     "gts": "^3.1.0",
     "jest": "^27.3.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.55.0",
     "ts-jest": "^27.0.7",
     "typescript": "~4.4.0"
