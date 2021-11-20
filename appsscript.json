@@ -1,7 +1,10 @@
 {
   "timeZone": "America/Santiago",
   "dependencies": {
+    "enabledAdvancedServices": [],
+    "libraries": []
   },
   "exceptionLogging": "STACKDRIVER",
-  "runtimeVersion": "V8"
+  "runtimeVersion": "V8",
+  "oauthScopes": []
 }
