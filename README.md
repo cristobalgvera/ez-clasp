@@ -1,32 +1,56 @@
-# 💻 TL;DR
+# 💻 EZ CLASP
+
+This project is a bootstrap to start a new [Google Apps Script](https://developers.google.com/apps-script) project or attach it to an existing one.
+
+Gives you out of the box a well defined develop flow for your GAS project.
+
+## ❓ How to
+
+### 🥇 First use
 
 1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking the **_"Use this template"_** button over repository files.
 
 2. Using the new created repository URL, clone it following next steps
 
-    ```bash
-    git clone https://github.com/YOUR_USER_NAME/YOUR_REPOSITORY_NAME.git
-    cd YOUR_REPOSITORY_NAME
+   ```bash
+   git clone https://github.com/YOUR_USER_NAME/YOUR_REPOSITORY_NAME.git
+   cd YOUR_REPOSITORY_NAME
 
-    npm install
-    npm run login # And access to your Google account
-    ```
+   npm install
+   npm run clasp:login # And access to your Google account
+   ```
 
-3. Add your Apps Script ID inside **_.clasp.json_** file located in root in the **_scriptId_** key.
+3. **If you DO NOT have an existing project**, run `npm run clasp:create` to create a new project. CLASP cli will prompt some project types, you should select one of them.
 
-    ![Project configuration](docs/images/project-configuration.png)
+4. **If you have an existing project**, add your Apps Script ID inside [`.clasp.json`](./.clasp.json) in the **_scriptId_** key.
 
-4. Push your TS project on Google Apps Script using
+   ![Project configuration](docs/images/project-configuration.png)
 
-    ```bash
-    npm run deploy
-    ```
+5. Push your TS project on Google Apps Script using
 
-## 🤔 How to push HTML or non TypeScript files?
+   ```bash
+   npm run deploy
+   ```
 
-If you need to push some other files that will not be included in transpilation process, you can put them into **_app/_** folder \*(or whatever location you want if you change **_.claspignore_** configuration)\*.
+   The **first time** you execute this command, CLASP cli will ask you to overwrite manifest file [`appsscript.json`](./appsscript.json) of the project, insert `y` key and press `enter`.
+
+   This file contains configuration required by Google to manage permissions and access to your project.
+
+### 🤔 How to push HTML or non TypeScript files?
+
+If you need to push some other files that will not be included in transpilation process, you can put them into [`app/`](./app) folder \*(or whatever location you want if you change [`.claspignore`](./.claspignore) configuration)\*.
 
 Put your assets in here, meaning some HTML or any JavaScript file you need to be pushed to Google Apps Script.
+
+⚠️ **Google Apps Script only allows you to push files with the extension `**.html`or`**.js`**. If you need to add files as `**.css`, see Google Apps Script [HTML best practices page](https://developers.google.com/apps-script/guides/html/best-practices).
+
+### 🗂 How to add Google services, advanced Google services or external libraries?
+
+When you add a Google service _(Gmail, Google Sheets, etc)_ which require some kind of permissions, e.g. permissions to read your email or write in a spreadsheet, you will need to add those specific permissions (OAuthScopes) in the file called [`appscript.json`](./appsscript.json), in `oauthScope` array as a string.
+
+Full list of OAuthScopes can be found in this [link](https://developers.google.com/identity/protocols/oauth2/scopes).
+
+Similarly, when you need to use and advanced service, like Drive _(the old version)_, or a third party library, you will need to add those _(with the required format)_ in [`appscript.json`](./appsscript.json) file, in the dependencies object, below each attribute array. See the required structure in this [link](http://json.schemastore.org/appsscript)
 
 ## 🍕 Extras
 
@@ -43,9 +67,9 @@ Project has preloaded these libraries that will help you to have a better develo
 
 ### ❗ Ignored files
 
-In case you want ignore certain files to be pushed, you can add them to **_.claspignore_** file. You can see in it some already ignored base directories.
+In case you want ignore certain files to be pushed, you can add them to [`.claspignore`](./.claspignore) file. You can see in it some already ignored base directories.
 
-_P.D.: Of course you can delete this **README** file and the **docs/** folder._
+_P.D.: Of course you can delete this **README** file and the [`docs/`](./docs) folder._
 
 ## 💼 Example projects
 
