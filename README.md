@@ -24,7 +24,7 @@ Gives you out of the box a well defined develop flow for your GAS project.
 
 4. **If you have an existing project**, add your Apps Script ID inside [`.clasp.json`](./.clasp.json) in the **_scriptId_** key.
 
-   ![Project configuration](docs/images/project-configuration.png)
+   ![Project configuration](assets/images/project-configuration.png)
 
 5. Push your TS project on Google Apps Script using
 
@@ -46,9 +46,7 @@ Put your assets in here, meaning some HTML or any JavaScript file you need to be
 
 ### 🗂 How to add Google services, advanced Google services or external libraries?
 
-When you add a Google service _(Gmail, Google Sheets, etc)_ which require some kind of permissions, e.g. permissions to read your email or write in a spreadsheet, you will need to add those specific permissions (OAuthScopes) in the file called [`appscript.json`](./appsscript.json), in `oauthScope` array as a string.
-
-Full list of OAuthScopes can be found in this [link](https://developers.google.com/identity/protocols/oauth2/scopes).
+When you add a Google service _(Gmail, Google Sheets, etc)_ which require some kind of permissions, e.g. permissions to read your email or write in a spreadsheet, you will need to add those specific permissions (OAuthScopes) in the file called [`appscript.json`](./appsscript.json), in `oauthScope` array as a string. List of OAuthScopes can be found in this [link](https://developers.google.com/identity/protocols/oauth2/scopes).
 
 Similarly, when you need to use and advanced service, like Drive _(the old version)_, or a third party library, you will need to add those _(with the required format)_ in [`appscript.json`](./appsscript.json) file, in the dependencies object, below each attribute array. See the required structure in this [link](http://json.schemastore.org/appsscript)
 
@@ -69,7 +67,7 @@ Project has preloaded these libraries that will help you to have a better develo
 
 In case you want ignore certain files to be pushed, you can add them to [`.claspignore`](./.claspignore) file. You can see in it some already ignored base directories.
 
-_P.D.: Of course you can delete this **README** file and the [`docs/`](./docs) folder._
+_P.D.: Of course you can delete this **README** file and the [`assets/`](./assets) folder._
 
 ## 💼 Example projects
 
