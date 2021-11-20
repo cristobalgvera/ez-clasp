@@ -26,7 +26,7 @@ Gives you out of the box a well defined develop flow for your GAS project.
 
    ![Project configuration](assets/images/project-configuration.png)
 
-5. Push your TS project on Google Apps Script using
+5. Push your TypeScript project to Google Apps Script using
 
    ```bash
    npm run deploy
