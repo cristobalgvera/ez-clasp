@@ -20,7 +20,7 @@
     "push": "clasp push",
     "push:watch": "npm run push -- --watch",
     "test": "jest",
-    "test:staged": "jest --findRelatedTests",
+    "test:staged": "jest --bail --findRelatedTests",
     "test:watch": "npm run test -- --watchAll",
     "types:check": "tsc --pretty --noEmit --skipLibCheck --allowJs"
   },
