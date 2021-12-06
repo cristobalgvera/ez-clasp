@@ -22,6 +22,8 @@ Gives you out of the box a well defined develop flow for your GAS project.
 
 3. **If you DO NOT have an existing project**, run `npm run clasp:create` to create a new project. CLASP cli will prompt some project types, you should select one of them.
 
+   After you run this script, inside the created `.clasp.json` file, I strongly recommend you to change attribute `rootDir` to `.`. This way you can share and move your project without any issues. This is a Google CLASP CLI trouble.
+
 4. **If you have an existing project**, add your Apps Script ID inside [`.clasp.json`](./.clasp.json) in the **_scriptId_** key.
 
    ![Project configuration](assets/images/project-configuration.png)
