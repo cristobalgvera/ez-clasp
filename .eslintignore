@@ -2,6 +2,4 @@ node_modules/
 build/
 coverage/
 
-.prettierrc.*
-.eslintrc.*
-*.config.*
+!.prettierrc.js

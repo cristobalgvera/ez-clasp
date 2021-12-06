@@ -1,5 +1,11 @@
-const gtsConfig = require('gts/.prettierrc.json');
+// @ts-check
+
+/** @type {import('prettier').Options} */
+const prettierConfig = {
+  trailingComma: 'all',
+  singleQuote: true,
+};
 
 module.exports = {
-  ...gtsConfig,
+  ...prettierConfig,
 };

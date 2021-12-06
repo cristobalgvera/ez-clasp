@@ -5,6 +5,9 @@
   "description": "Google Apps Script starter project with TypeScript support",
   "license": "MIT",
   "main": "src/index.ts",
+  "engines": {
+    "node": ">= 12"
+  },
   "scripts": {
     "build": "rollup --config",
     "build:clean": "rimraf build/",
@@ -17,7 +20,7 @@
     "format:fix-all": "npm run format:fix-file -- .",
     "format:fix-file": "prettier --write",
     "lint:check-all": "npm run lint:check-file -- .",
-    "lint:check-file": "eslint --ext ts --ext js --max-warnings 0 --fix",
+    "lint:check-file": "eslint --ext ts --ext js --max-warnings 0",
     "lint:fix-all": "npm run lint:check-all -- --cache --fix",
     "lint:fix-file": "npm run lint:check-file -- --cache --fix",
     "prepare": "husky install",
