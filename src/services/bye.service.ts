@@ -5,7 +5,7 @@ export default class ByeService {
   }
 
   static sayByeAsync(name?: string): Promise<string> {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve(this.sayBye(name));
       }, 100);
