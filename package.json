@@ -9,13 +9,17 @@
     "build": "rollup --config",
     "build:clean": "rimraf build/",
     "build:watch": "npm run build -- --watch",
-    "clasp:login": "clasp login",
     "clasp:create": "rimraf .clasp.json & clasp create",
+    "clasp:login": "clasp login",
     "deploy": "npm run build & npm run push",
-    "format:fix": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint:check": "eslint . --ext ts --ext js --max-warnings 0",
-    "lint:fix": "eslint . --cache --fix --ext ts --ext js",
+    "format:check-all": "npm run format:check-file -- .",
+    "format:check-file": "prettier --check",
+    "format:fix-all": "npm run format:fix-file -- .",
+    "format:fix-file": "prettier --write",
+    "lint:check-all": "npm run lint:check-file -- .",
+    "lint:check-file": "eslint --ext ts --ext js --max-warnings 0 --fix",
+    "lint:fix-all": "npm run lint:check-all -- --cache --fix",
+    "lint:fix-file": "npm run lint:check-file -- --cache --fix",
     "prepare": "husky install",
     "push": "clasp push",
     "push:watch": "npm run push -- --watch",
@@ -65,8 +69,8 @@
   ],
   "lint-staged": {
     "**/*.{js,ts}": [
-      "npm run lint:fix",
-      "npm run format:fix",
+      "npm run lint:fix-file",
+      "npm run format:fix-file",
       "npm run types:check",
       "npm run test:staged"
     ]
