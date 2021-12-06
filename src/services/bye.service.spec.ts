@@ -1,14 +1,20 @@
 import ByeService from './bye.service';
 
 describe('ByeService', () => {
-  it('should return bye message with name passed', () => {
-    const name = 'John';
-    const message = ByeService.sayBye(name);
-    expect(message).toContain(name);
+  const NAME = 'John';
+
+  it('should return bye message with provided name', () => {
+    const message = ByeService.sayBye(NAME);
+    expect(message).toContain(NAME);
   });
 
-  it('should return bye message with default name "World" when no name is passed', () => {
+  it('should return bye message with default name "World" when no name is provided', () => {
     const message = ByeService.sayBye();
     expect(message).toContain('World');
+  });
+
+  it('should return bye message async with provided name', async () => {
+    const message = await ByeService.sayByeAsync(NAME);
+    expect(message).toContain(NAME);
   });
 });

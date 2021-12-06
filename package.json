@@ -11,7 +11,7 @@
     "lint": "gts lint",
     "fix": "gts fix",
     "clean": "rimraf build/",
-    "test": "jest",
+    "test": "jest --watchAll",
     "build": "rollup --config",
     "push": "clasp push",
     "deploy": "npm run build & npm run push",
@@ -19,7 +19,6 @@
     "build:watch": "npm run build -- --watch",
     "push:watch": "npm run push -- --watch"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@babel/plugin-transform-runtime": "^7.14.5",
