@@ -1,8 +1,10 @@
 // Functional approach
 const HelloService = {
   sayHi: (name?: string): string => `Hello, ${name ?? 'World'}!`,
-  sayHiAsync: async (name?: string): Promise<string> =>
-    `Hello, ${name ?? 'World'}!`,
+  sayHiAsync: (name?: string): Promise<string> =>
+    new Promise(resolve => {
+      setTimeout(() => resolve(`Hello, ${name ?? 'World'}!`), 100);
+    }),
 } as const;
 
 export default HelloService;
