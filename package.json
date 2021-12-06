@@ -1,26 +1,28 @@
 {
   "name": "ez-clasp",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "author": "cristobalgvera",
   "description": "Google Apps Script starter project with TypeScript support",
   "license": "MIT",
   "main": "src/index.ts",
   "scripts": {
     "build": "rollup --config",
+    "build:clean": "rimraf build/",
     "build:watch": "npm run build -- --watch",
     "clasp:login": "clasp login",
     "clasp:create": "rimraf .clasp.json & clasp create",
-    "clean:fix": "rimraf build/",
     "deploy": "npm run build & npm run push",
     "format:fix": "prettier --write .",
     "format:check": "prettier --check .",
     "lint:check": "eslint . --ext ts --ext js --max-warnings 0",
+    "lint:fix": "eslint . --cache --fix --ext ts --ext js",
     "prepare": "husky install",
     "push": "clasp push",
     "push:watch": "npm run push -- --watch",
     "test": "jest",
+    "test:staged": "jest --findRelatedTests",
     "test:watch": "npm run test -- --watchAll",
-    "types:check": "tsc --pretty --noEmit"
+    "types:check": "tsc --pretty --noEmit --skipLibCheck --allowJs"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
@@ -57,10 +59,16 @@
     "prettier",
     "eslint",
     "javascript",
-    "babel"
+    "babel",
+    "husky",
+    "lint-staged"
   ],
   "lint-staged": {
-    "*.ts": "eslint --cache --fix",
-    "*.js": "eslint --cache --fix"
+    "**/*.{js,ts}": [
+      "npm run lint:fix",
+      "npm run format:fix",
+      "npm run types:check",
+      "npm run test:staged"
+    ]
   }
 }

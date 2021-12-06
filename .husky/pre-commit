@@ -1,66 +1,12 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo '🏗️👷 Testing, styling and building your project before committing'
+echo '🏗️👷 Styling, testing and building your project before committing'
 
-# Run tests
-npm test || (
-        echo '🚨 🏗 Tests failed
-
-        Your code has failed tests.
-        Make the necessary changes and try again.
-
-        💡 Run "npm test" to see the errors
-        '
-        false;
-)
-
-echo '✅ 🏗 All tests properly passed'
-
-# Format and lint code automatically
+# Edit the command sequence in package.json
 npx lint-staged
 
-# Check Prettier standards in case lint-staged fail
-npm run format:check || (
-        echo '🚨 ✨ Prettier standards check failed
-        
-        It wasn’t possible to format your code automatically.
-        Make the required changes listed above, add changes and try to commit again.
-
-        💡 You can also run `npm run format:check` to see the issues and fix them manually.
-        '
-        false;
-)
-
-echo '✅ ✨ Code is properly formatted'
-
-# Check ESLint Standards in case lint-staged fail
-npm run lint:check || (
-        echo '🚨 ✍🏻 ESLint standards check failed
-
-        It wasn’t possible to fix your lint issues automatically.
-        Make the required changes listed above, add changes and try to commit again.
-
-        💡 You can also run `npm run lint:check` to see the issues and fix them manually.
-        '
-        false; 
-)
-
-echo '✅ ✍🏻 Code is properly linted'
-
-# Check tsconfig standards
-npm run types:check || (
-        echo '🚨 📦 TypeScript standards check failed
-        
-        TypeScript transpiler found some issues.
-        Make the changes required above.
-        
-        💡 You can also run `npm run types:check` to see the issues and fix them manually.
-        '
-        false;
-)
-
-echo '✅ 📦 Code is properly typed'
+echo '👷🏻 Building project...'
 
 # Build project
 npm run build || (
@@ -73,5 +19,17 @@ npm run build || (
         false;
 )
 
-echo '✅ 👷🏻 Project built successfully'
+echo '✅ 👷🏻 Project built successfully. Removing build artifacts...'
+
+# Remove build artifacts
+npm run build:clean || (
+        echo '🚨 👷🏻 Build clean failed
+        
+        Build clean process failed, please check the above errors.
+
+        💡 You can also run `npm run build:clean` to see the issues and fix them manually.
+        '
+        false;
+)
+
 echo '✅ All validation checks passed. Commiting... 🤘🏻'
