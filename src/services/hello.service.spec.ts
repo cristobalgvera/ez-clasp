@@ -1,6 +1,6 @@
 import HelloService from './hello.service';
 
-describe('HelloService', () => {
+describe('hello service', () => {
   const NAME = 'John';
 
   it('should return hi message with default name "World" when no name is provided', () => {

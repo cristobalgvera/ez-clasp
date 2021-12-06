@@ -1,6 +1,6 @@
 import ByeService from './bye.service';
 
-describe('ByeService', () => {
+describe('bye service', () => {
   const NAME = 'John';
 
   it('should return bye message with provided name', () => {
