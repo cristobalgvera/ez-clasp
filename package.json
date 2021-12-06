@@ -12,9 +12,9 @@
     "build": "rollup --config",
     "build:clean": "rimraf build/",
     "build:watch": "npm run build -- --watch",
-    "clasp:create": "rimraf .clasp.json & clasp create",
+    "clasp:create": "rimraf .clasp.json && clasp create",
     "clasp:login": "clasp login",
-    "deploy": "npm run build & npm run push",
+    "deploy": "npm run check:all && npm run build && npm run push",
     "format:check-all": "npm run format:check-file -- .",
     "format:check-file": "prettier --check",
     "format:fix-all": "npm run format:fix-file -- .",
@@ -29,6 +29,7 @@
     "test": "jest",
     "test:file": "jest --bail --findRelatedTests",
     "test:watch": "npm run test -- --watchAll",
+    "check:all": "npm run lint:check-all && npm run format:check-all && npm run types:check && npm test",
     "types:check": "tsc --pretty --noEmit --skipLibCheck --allowJs"
   },
   "devDependencies": {
@@ -45,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "eslint": "^8.4.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "gts": "^3.1.0",
