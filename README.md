@@ -56,12 +56,22 @@ Similarly, when you need to use and advanced service, like Drive _(the old versi
 
 Project has preloaded these libraries that will help you to have a better development experience:
 
-- TypeScript.
-- ESLint.
-- Prettier.
-- RollupJS.
-- Babel.
-- Jest.
+- **TypeScript** _(Development)_.
+- **ESLint** + **Prettier** _(Format and linting)_.
+- **Babel** + **Rollup** _(Building)_.
+- **Husky** + **Lint-Staged** _(Commit)_.
+- **Jest** _(Testing)_.
+
+#### 🐾 Husky + Lint-Staged
+
+In order to improve commitment flow when working with teams, template has a pre configured Husky implementation. The followed flow is:
+
+- Fix **ESLint** issues if possible.
+- Fix **Prettier** issues if possible.
+- Run **Tests**.
+- **Build** the code.
+
+All tasks but build run only for the staged changes.
 
 ### ❗ Ignored files
 
