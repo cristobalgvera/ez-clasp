@@ -13,7 +13,19 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "declaration": true,
+    "pretty": true,
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "useUnknownInCatchVariables": true
   },
   "include": ["src"]
 }
