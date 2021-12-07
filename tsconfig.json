@@ -16,7 +16,6 @@
     "noEmit": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
-    "declaration": true,
     "pretty": true,
     "alwaysStrict": true,
     "noImplicitAny": true,
@@ -25,7 +24,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": true,
-    "useUnknownInCatchVariables": true
+    "useUnknownInCatchVariables": true,
+    "exactOptionalPropertyTypes": true
   },
   "include": ["src"]
 }

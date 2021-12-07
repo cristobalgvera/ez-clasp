@@ -8,6 +8,11 @@ const eslintConfig = {
     'plugin:jest/style',
     'plugin:prettier/recommended',
   ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    // warnOnUnsupportedTypeScriptVersion: false,
+  },
 };
 
 module.exports = {
