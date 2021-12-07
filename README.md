@@ -8,14 +8,26 @@ Gives you out of the box a well defined develop flow for your GAS project.
 
 ### 🥇 First use
 
-1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking the **_"Use this template"_** button over repository files.
+1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking the **_"Use this template"_** button over repository files. You can also use `npx degit cristobalgvera/ez-clasp YOUR_REPOSITORY_NAME` instead.
 
 2. Using the new created repository URL, clone it following next steps
+
+   If you used the `template` form:
 
    ```bash
    git clone https://github.com/YOUR_USER_NAME/YOUR_REPOSITORY_NAME.git
    cd YOUR_REPOSITORY_NAME
 
+   npm install
+   npm run clasp:login # And access to your Google account
+   ```
+
+   If you used `npx degit` form:
+
+   ```bash
+   cd YOUR_REPOSITORY_NAME
+
+   git init
    npm install
    npm run clasp:login # And access to your Google account
    ```
