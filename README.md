@@ -8,7 +8,13 @@ Gives you out of the box a well defined develop flow for your GAS project.
 
 ### 🥇 First use
 
-1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking the **_"Use this template"_** button over repository files. You can also use `npx degit cristobalgvera/ez-clasp YOUR_REPOSITORY_NAME` instead.
+1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking the **_"Use this template"_** button over repository files.
+
+   You can use `npx degit` form instead:
+
+   ```bash
+   npx degit cristobalgvera/ez-clasp YOUR_REPOSITORY_NAME
+   ```
 
 2. Using the new created repository URL, clone it following next steps
 
