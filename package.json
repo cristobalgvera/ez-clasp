@@ -27,7 +27,7 @@
     "push": "clasp push",
     "push:watch": "npm run push -- --watch",
     "test": "jest",
-    "test:file": "jest --bail --findRelatedTests",
+    "test:file": "jest --bail --findRelatedTests --passWithNoTests",
     "test:watch": "npm run test -- --watchAll",
     "check:all": "npm run lint:check-all && npm run format:check-all && npm run types:check-all && npm test",
     "types:check-all": "tsc",
