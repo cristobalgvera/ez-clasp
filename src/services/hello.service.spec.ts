@@ -17,4 +17,9 @@ describe('hello service', () => {
     const message = await HelloService.sayHiAsync(NAME);
     expect(message).toContain(NAME);
   });
+
+  it('should return hi async message with default name "World" when no name is provided', async () => {
+    const message = await HelloService.sayHiAsync();
+    expect(message).toContain('World');
+  });
 });
