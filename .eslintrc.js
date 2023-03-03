@@ -17,6 +17,7 @@ const eslintConfig = {
     {
       parser: '@typescript-eslint/parser',
       files: ['*.ts'],
+      excludedFiles: ['src/index.ts'],
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',

@@ -1,0 +1,7 @@
+{
+  "**/*.{js,ts}": [
+    "npm run lint:fix-file",
+    "npm run format:fix-file",
+    "npm run types:check-file"
+  ]
+}
