@@ -1,25 +1,39 @@
 import HelloService from './hello.service';
 
-describe('hello service', () => {
-  const NAME = 'John';
+describe('HelloService', () => {
+  describe('sayHi', () => {
+    describe('sync', () => {
+      describe('when name is provided', () => {
+        it('should return hi message with provided name', () => {
+          const expected = 'John';
+          const actual = HelloService.sayHi(expected);
+          expect(actual).toContain(expected);
+        });
+      });
 
-  it('should return hi message with default name "World" when no name is provided', () => {
-    const message = HelloService.sayHi();
-    expect(message).toContain('World');
-  });
+      describe('when name is not provided', () => {
+        it('should return hi message with default name', () => {
+          const actual = HelloService.sayHi();
+          expect(actual).toMatchInlineSnapshot(`"Hello, World!"`);
+        });
+      });
+    });
 
-  it('should return hi message with provided name', () => {
-    const message = HelloService.sayHi(NAME);
-    expect(message).toContain(NAME);
-  });
+    describe('async', () => {
+      describe('when name is provided', () => {
+        it('should return hi async message with provided name', async () => {
+          const expected = 'John';
+          const actual = await HelloService.sayHiAsync(expected);
+          expect(actual).toContain(expected);
+        });
+      });
 
-  it('should return hi async message with provided name', async () => {
-    const message = await HelloService.sayHiAsync(NAME);
-    expect(message).toContain(NAME);
-  });
-
-  it('should return hi async message with default name "World" when no name is provided', async () => {
-    const message = await HelloService.sayHiAsync();
-    expect(message).toContain('World');
+      describe('when name is not provided', () => {
+        it('should return hi async message with default name', async () => {
+          const actual = await HelloService.sayHiAsync();
+          expect(actual).toMatchInlineSnapshot(`"Hello, World!"`);
+        });
+      });
+    });
   });
 });

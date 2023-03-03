@@ -1,20 +1,39 @@
 import ByeService from './bye.service';
 
-describe('bye service', () => {
-  const NAME = 'John';
+describe('ByeService', () => {
+  describe('sayBye', () => {
+    describe('sync', () => {
+      describe('when name is provided', () => {
+        it('should return bye message with provided name', () => {
+          const expected = 'John';
+          const actual = ByeService.sayBye(expected);
+          expect(actual).toContain(expected);
+        });
+      });
 
-  it('should return bye message with provided name', () => {
-    const message = ByeService.sayBye(NAME);
-    expect(message).toContain(NAME);
-  });
+      describe('when name is not provided', () => {
+        it('should return bye message with default name', () => {
+          const actual = ByeService.sayBye();
+          expect(actual).toMatchInlineSnapshot(`"Bye, World!"`);
+        });
+      });
+    });
 
-  it('should return bye message with default name "World" when no name is provided', () => {
-    const message = ByeService.sayBye();
-    expect(message).toContain('World');
-  });
+    describe('async', () => {
+      describe('when name is provided', () => {
+        it('should return bye message with provided name', async () => {
+          const expected = 'John';
+          const actual = await ByeService.sayByeAsync(expected);
+          expect(actual).toContain(expected);
+        });
+      });
 
-  it('should return bye message async with provided name', async () => {
-    const message = await ByeService.sayByeAsync(NAME);
-    expect(message).toContain(NAME);
+      describe('when name is not provided', () => {
+        it('should return bye message with default name', async () => {
+          const actual = await ByeService.sayByeAsync();
+          expect(actual).toMatchInlineSnapshot(`"Bye, World!"`);
+        });
+      });
+    });
   });
 });
