@@ -1,4 +1,4 @@
-import ByeService from './bye.service';
+import { ByeService } from './bye.service';
 
 describe('ByeService', () => {
   describe('sayBye', () => {
