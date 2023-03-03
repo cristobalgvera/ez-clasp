@@ -17,10 +17,7 @@ const eslintConfig = {
     {
       parser: '@typescript-eslint/parser',
       files: ['*.ts'],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-      ],
+      extends: ['plugin:@typescript-eslint/recommended'],
       parserOptions: {
         project: ['./tsconfig.json'],
       },

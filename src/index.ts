@@ -1,5 +1,7 @@
 import { ByeService } from './bye';
 import { HelloService } from './hello';
+import { ByeService } from '@features/bye';
+import { HelloService } from '@features/hello';
 
 // @ts-ignore
 function main(): void {
