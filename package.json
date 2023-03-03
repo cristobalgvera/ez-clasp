@@ -27,9 +27,10 @@
     "push": "clasp push",
     "push:watch": "npm run push -- --watch",
     "test": "jest",
+    "test:cov": "npm run test -- --coverage",
     "test:file": "jest --bail --findRelatedTests --passWithNoTests",
     "test:watch": "npm run test -- --watchAll",
-    "check:all": "npm run lint:check-all && npm run format:check-all && npm run types:check-all && npm test",
+    "check:all": "npm run lint:check-all && npm run format:check-all && npm run types:check-all && npm test:cov",
     "types:check-all": "tsc",
     "types:check-file": "tsc --target ES5 --module ESNext --moduleResolution node --lib ESNext --noEmit --pretty --skipLibCheck --allowJs --allowSyntheticDefaultImports --strict --noImplicitAny --noImplicitOverride --noImplicitThis --noUnusedLocals --noUnusedParameters --useUnknownInCatchVariables --noFallthroughCasesInSwitch"
   },
