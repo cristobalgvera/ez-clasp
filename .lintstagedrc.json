@@ -1,6 +1,3 @@
 {
-  "**/*.{js,ts}": [
-    "npm run lint:fix-file",
-    "npm run format:fix-file"
-  ]
+  "**/*.{js,ts}": ["npm run lint:fix-file", "npm run format:fix-file"]
 }
