@@ -9,6 +9,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -25,7 +26,11 @@
     "noUnusedParameters": true,
     "removeComments": true,
     "useUnknownInCatchVariables": true,
-    "exactOptionalPropertyTypes": true
+    "exactOptionalPropertyTypes": true,
+    "paths": {
+      "@core/*": ["src/core/*"],
+      "@features/*": ["src/features/*"]
+    }
   },
   "include": ["src"]
 }

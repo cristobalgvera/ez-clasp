@@ -1,6 +1,7 @@
 /* eslint-disable node/no-unpublished-require */
 const { babel } = require('@rollup/plugin-babel');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const { default: typescript } = require('@rollup/plugin-typescript');
 
 const extensions = ['.ts', '.js'];
 
@@ -8,18 +9,14 @@ const preventThreeShakingPlugin = () => {
   return {
     name: 'no-threeshaking',
     resolveId(id, importer) {
-      if (!importer) {
-        // let's not theeshake entry points, as we're not exporting anything in App Scripts
-        return { id, moduleSideEffects: 'no-treeshake' };
-      }
-
-      return null;
+      // let's not theeshake entry points, as we're not exporting anything in App Scripts
+      if (!importer) return { id, moduleSideEffects: 'no-treeshake' };
     },
   };
 };
 
 module.exports = {
-  input: './src/index.ts',
+  input: 'src/index.ts',
   output: [
     {
       dir: 'build',
@@ -27,6 +24,7 @@ module.exports = {
     },
   ],
   plugins: [
+    typescript(),
     preventThreeShakingPlugin(),
     nodeResolve({
       extensions,
