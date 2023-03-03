@@ -17,7 +17,6 @@ const eslintConfig = {
     {
       parser: '@typescript-eslint/parser',
       files: ['*.ts'],
-      excludedFiles: ['src/index.ts'],
       extends: [
         'plugin:@typescript-eslint/recommended',
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
@@ -25,20 +24,27 @@ const eslintConfig = {
       parserOptions: {
         project: ['./tsconfig.json'],
       },
+      overrides: [
+        {
+          files: ['src/index.ts'],
+          rules: {
+            '@typescript-eslint/ban-ts-comment': 'off',
+            '@typescript-eslint/no-unused-vars': 'off',
+          },
+        },
+        {
+          files: ['**/*.spec.ts', '**/*.test.ts'],
+          rules: {
+            'node/no-unpublished-import': 'off',
+            'node/no-extraneous-import': 'error',
+          },
+        },
+      ],
     },
     {
-      parser: '@typescript-eslint/parser',
-      files: ['src/index.ts'],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-      ],
-      parserOptions: {
-        project: ['./tsconfig.json'],
-      },
+      files: ['*.config.js', '.prettierrc.js'],
       rules: {
-        '@typescript-eslint/ban-ts-comment': 'off',
-        '@typescript-eslint/no-unused-vars': 'off',
+        'node/no-unpublished-require': 'off',
       },
     },
   ],

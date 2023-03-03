@@ -1,4 +1,3 @@
-/* eslint-disable node/no-unpublished-require */
 const { babel } = require('@rollup/plugin-babel');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const { default: typescript } = require('@rollup/plugin-typescript');

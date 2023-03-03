@@ -4,6 +4,7 @@
   "author": "cristobalgvera",
   "description": "Google Apps Script starter project with TypeScript support",
   "license": "MIT",
+  "private": true,
   "main": "src/index.ts",
   "engines": {
     "node": ">= 16"
@@ -39,6 +40,7 @@
     "@babel/plugin-transform-runtime": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
+    "@golevelup/ts-jest": "^0.3.5",
     "@google/clasp": "^2.4.2",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.0.1",
