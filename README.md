@@ -144,6 +144,87 @@ using the required format, in the [`appsscript.json`](./appsscript.json) file,
 inside the dependencies object, in one of the arrays. See the required structure
 in this [link](http://json.schemastore.org/appsscript)
 
+#### 🧪 How to test Google libraries
+
+Google libraries use namespaces as a resource to be imported, meaning there will
+no be imported through `import` syntax. This adds a complexity when testing it.
+
+In order to easily tests those kind of libraries, you will have to mock the global
+object, like so:
+
+```typescript
+// my-class.service.ts
+
+// In this example `GoogleService` is the service in use provided by Google
+export class MyClassService {
+  someMethodThatUseAnyGoogleService(body: BodyType) {
+    const childGoogleService = GoogleService.anyMethod();
+
+    return childGoogleService.childMethod(body);
+  }
+}
+```
+
+```typescript
+// my-class.service.spec.ts
+
+import { createMock } from '@golevelup/ts-jest';
+import { MyClassService } from './my-class.service.ts';
+
+describe('MyClassService', () => {
+  let underTest: MyClassService;
+
+  beforeEach(() => {
+    underTest = new MyClassService();
+  });
+
+  describe('someMethodThatUseAnyGoogleService', () => {
+    const originalService = global.GoogleService;
+
+    let googleService: typeof GoogleService;
+    let childGoogleService: ReturnType<(typeof googleService)['anyMethod']>;
+
+    beforeEach(() => {
+      childGoogleService = createMock<typeof childGoogleService>();
+      googleService = createMock<typeof googleService>({
+        anyMethod: () => childGoogleService,
+      });
+
+      global.GoogleService = googleService;
+    });
+
+    afterEach(() => {
+      global.GoogleService = originalService;
+    });
+
+    it('should call ChildGoogleService with correct parameters', () => {
+      const expected = { any: 'parameter' };
+
+      const childGoogleServiceSpy = jest.spyOn(
+        childGoogleService,
+        'childMethod',
+      );
+
+      underTest.someMethodThatUseAnyGoogleService(expected as any);
+
+      expect(childGoogleServiceSpy).toHaveBeenCalledWith(expected);
+    });
+
+    it('should return the value', () => {
+      const expected = { any: 'parameter' };
+
+      jest
+        .spyOn(childGoogleService, 'childMethod')
+        .mockReturnValueOnce(expected);
+
+      const actual = underTest.someMethodThatUseAnyGoogleService({} as any);
+
+      expect(actual).toEqual(expected);
+    });
+  });
+});
+```
+
 ## 🍕 Extras
 
 ### 📚 Libs
