@@ -1,5 +1,6 @@
 import { ByeService } from '../bye';
 
+// Dependency Injection (ish) approach
 export class GreetingService {
   constructor(private readonly byeService: ByeService) {}
 
