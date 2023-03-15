@@ -12,6 +12,7 @@ function main(): void {
   const hiMessage = HelloService.sayHi('CLASP');
   const byeMessage = ByeService.sayBye('CLASP');
   const greeting = greetingService.greet('CLASP');
+  const secretValue = greetingService.useSecretValue();
 
-  console.log({ hiMessage, byeMessage, greeting });
+  console.log({ hiMessage, byeMessage, greeting, secretValue });
 }

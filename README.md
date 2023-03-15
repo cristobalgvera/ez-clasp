@@ -54,6 +54,15 @@ It will give you, out of the box, a well defined develop flow for your GAS proje
 
    ![Project configuration](assets/images/project-configuration.png)
 
+1. Create a `.env` file copying the [.env.example](./.env.example) file.
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Then your can make proper usage of environemnt variables in case you want.
+   If you don't, simply remove all environment variable related stuff.
+
 1. Push your project to Google Apps Script using
 
    ```bash
@@ -67,6 +76,9 @@ It will give you, out of the box, a well defined develop flow for your GAS proje
 
    The `appsscript.json` file contains configuration required by Google to
    manage permissions used by your users related to your project.
+
+1. **Test the code opening your
+   [Google Apps Script projects dashboard](https://script.google.com/home/my)!**
 
 ### 🤔 How to push HTML or non TypeScript files?
 
