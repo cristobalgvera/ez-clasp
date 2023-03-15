@@ -24,7 +24,7 @@ module.exports = {
     },
   ],
   plugins: [
-    typescript(),
+    typescript({ tsconfig: './tsconfig.build.json' }),
     preventThreeShakingPlugin(),
     nodeResolve({
       extensions,

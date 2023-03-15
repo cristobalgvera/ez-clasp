@@ -12,7 +12,6 @@
     "baseUrl": "./",
     "module": "ESNext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "allowUnusedLabels": false,
