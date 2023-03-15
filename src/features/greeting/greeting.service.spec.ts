@@ -1,20 +1,24 @@
 import { createMock } from '@golevelup/ts-jest';
 import { ByeService } from '@features/bye';
 import { GreetingService } from './greeting.service';
+import { EnvironmentService } from '@core/environment';
 
 describe('GreetingService', () => {
   let underTest: GreetingService;
   let byeService: ByeService;
+  let environmentService: EnvironmentService;
 
   beforeEach(() => {
     byeService = createMock<ByeService>();
+    environmentService = createMock<EnvironmentService>();
 
-    underTest = new GreetingService(byeService);
+    underTest = new GreetingService(byeService, environmentService);
   });
 
   it('should be defined', () => {
     expect(underTest).toBeDefined();
     expect(byeService).toBeDefined();
+    expect(environmentService).toBeDefined();
   });
 
   describe('greet', () => {
@@ -36,6 +40,31 @@ describe('GreetingService', () => {
       underTest.greet(expected);
 
       expect(byeServiceSpy).toHaveBeenCalledWith(expected);
+    });
+  });
+
+  describe('useSecretValue', () => {
+    it('should return the value', () => {
+      const expected = 'secret_value';
+
+      jest
+        .spyOn(environmentService, 'getSecretValue')
+        .mockReturnValueOnce(expected);
+
+      const actual = underTest.useSecretValue();
+
+      expect(actual).toEqual(expected);
+    });
+
+    it('should call EnvironmentService', () => {
+      const environmentServiceSpy = jest.spyOn(
+        environmentService,
+        'getSecretValue',
+      );
+
+      underTest.useSecretValue();
+
+      expect(environmentServiceSpy).toHaveBeenCalledTimes(1);
     });
   });
 });

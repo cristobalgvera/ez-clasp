@@ -1,3 +1,4 @@
+import { EnvironmentService } from '@core/environment';
 import { ByeService } from '@features/bye';
 import { GreetingService } from '@features/greeting';
 import { HelloService } from '@features/hello';
@@ -5,7 +6,8 @@ import { HelloService } from '@features/hello';
 // @ts-ignore
 function main(): void {
   const byeService = new ByeService();
-  const greetingService = new GreetingService(byeService);
+  const environmentService = new EnvironmentService();
+  const greetingService = new GreetingService(byeService, environmentService);
 
   const hiMessage = HelloService.sayHi('CLASP');
   const byeMessage = ByeService.sayBye('CLASP');
