@@ -1,6 +1,7 @@
 const { babel } = require('@rollup/plugin-babel');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
 const { default: typescript } = require('@rollup/plugin-typescript');
+const { default: dotenv } = require('rollup-plugin-dotenv');
 
 const extensions = ['.ts', '.js'];
 
@@ -34,5 +35,6 @@ module.exports = {
       babelHelpers: 'runtime',
       comments: false,
     }),
+    dotenv(),
   ],
 };

@@ -1,5 +1,3 @@
-// @ts-check
-
 /** @type {import('eslint').Linter.Config} */
 const eslintConfig = {
   extends: [
@@ -34,6 +32,7 @@ const eslintConfig = {
           rules: {
             'node/no-unpublished-import': 'off',
             'node/no-extraneous-import': 'error',
+            '@typescript-eslint/no-explicit-any': 'off',
           },
         },
       ],

@@ -81,6 +81,31 @@ to be pushed to Google Apps Script.
 `.html`, `.js`**. If you need files like `.css`, see Google Apps Script
 [HTML best practices page](https://developers.google.com/apps-script/guides/html/best-practices).
 
+### 🤔 How to use environment variables?
+
+Google provide us a way to handle environment variables using the
+[PropertiesService](https://developers.google.com/apps-script/reference/properties/properties-service?hl=es-419).
+This way of handling environment variables can easily transform in a mess
+if you are working in a developers team. You can check this way in order to
+follow Google's approach.
+
+This project gives you a way to handle environment variables directly
+inside your local development using Rollup's plugins. You just need to create
+a `.env` file located in the root directory of your project and then
+use the secret values simply using the `process.env.YOUR_SECRET_KEY` approach.
+You are free to create wrapper services to avoid repeating this pattern and
+give plenty type safety to your environment variables.
+
+In order to test the code that make usage of environment variables, you just need
+to add all your required environment variables to the [env.setup.js](./test/env.setup.js)
+file. This will make your entire process of testing to use those variables.
+
+If you want to have detailed control over environment variables, you will
+need to control it from your tests directly, e.g. modifying the `process.env`
+object to include an specific value. Take care about how to make this
+mocking process, remember the isolation of unit tests. Check
+[this article](https://razinj.dev/how-to-mock-process-env-in-jest/).
+
 ### 🗂 How to add Google services, advanced Google services or external libraries?
 
 When you add a Google service _(Gmail, Google Sheets, etc.)_ which require some
