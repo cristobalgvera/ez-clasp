@@ -47,9 +47,7 @@ describe('GreetingService', () => {
     it('should return the value', () => {
       const expected = 'secret_value';
 
-      jest
-        .spyOn(environmentService, 'getSecretValue')
-        .mockReturnValueOnce(expected);
+      jest.spyOn(environmentService, 'get').mockReturnValueOnce(expected);
 
       const actual = underTest.useSecretValue();
 
@@ -57,10 +55,7 @@ describe('GreetingService', () => {
     });
 
     it('should call EnvironmentService', () => {
-      const environmentServiceSpy = jest.spyOn(
-        environmentService,
-        'getSecretValue',
-      );
+      const environmentServiceSpy = jest.spyOn(environmentService, 'get');
 
       underTest.useSecretValue();
 

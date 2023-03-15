@@ -19,6 +19,9 @@ const eslintConfig = {
       parserOptions: {
         project: ['./tsconfig.json'],
       },
+      rules: {
+        '@typescript-eslint/switch-exhaustiveness-check': 'error',
+      },
       overrides: [
         {
           files: ['src/index.ts'],

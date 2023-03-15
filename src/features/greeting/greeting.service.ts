@@ -15,6 +15,6 @@ export class GreetingService {
   }
 
   useSecretValue(): string {
-    return this.environmentService.getSecretValue();
+    return this.environmentService.get('MY_SECRET_VALUE');
   }
 }

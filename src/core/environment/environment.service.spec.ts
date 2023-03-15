@@ -14,39 +14,41 @@ describe('EnvironmentService', () => {
     process.env = originalEnv;
   });
 
-  describe('getSecretValue', () => {
-    const environment = {
-      MY_SECRET_VALUE: 'secret',
-    } as Environment;
+  describe('get', () => {
+    describe('when the environment variable is defined', () => {
+      const environment: Environment = {
+        MY_SECRET_VALUE: 'secret',
+        MY_SECRET_NUMBER: 12345,
+      };
 
-    beforeEach(() => {
-      process.env = environment as any;
+      beforeEach(() => {
+        process.env = environment as any;
+      });
+
+      it.each(Object.keys(environment) as (keyof typeof environment)[])(
+        'should return the value of the variable called %s',
+        (key) => {
+          const expected = environment[key];
+
+          const actual = underTest.get(key);
+
+          expect(actual).toEqual(expected);
+        },
+      );
     });
 
-    it('should return the value of the secret', () => {
-      const expected = environment.MY_SECRET_VALUE;
+    describe('when the environment variable is not defined', () => {
+      beforeEach(() => {
+        process.env = {} as any;
+      });
 
-      const actual = underTest.getSecretValue();
-
-      expect(actual).toEqual(expected);
-    });
-  });
-
-  describe('getSecretNumber', () => {
-    const environment = {
-      MY_SECRET_NUMBER: 12345,
-    } as Environment;
-
-    beforeEach(() => {
-      process.env = environment as any;
-    });
-
-    it('should return the value of the secret', () => {
-      const expected = environment.MY_SECRET_NUMBER;
-
-      const actual = underTest.getSecretNumber();
-
-      expect(actual).toEqual(expected);
+      it('should throw an error', () => {
+        expect(() =>
+          underTest.get('MY_VALUE' as any),
+        ).toThrowErrorMatchingInlineSnapshot(
+          `"Environment variable MY_VALUE is not defined"`,
+        );
+      });
     });
   });
 });
