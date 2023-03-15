@@ -38,7 +38,7 @@ const eslintConfig = {
       ],
     },
     {
-      files: ['*.config.js', '.prettierrc.js'],
+      files: ['*.config.js'],
       rules: {
         'node/no-unpublished-require': 'off',
       },
