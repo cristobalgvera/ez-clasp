@@ -5,6 +5,19 @@ project or attach it to an existing one.
 
 It will give you, out of the box, a well defined develop flow for your GAS project.
 
+This workflow will let you to:
+
+- Use the latest TypeScript features.
+- Use the latest EcmaScript features.
+- Easily unit test your project, even if your are using the Google-related
+  interfaces (SpreadsheetApp, DriveApp, DataStudioApp, etc.).
+- Maintain your code always formatted and linted in your workspace.
+- Manage your code using versioning tools.
+- Easily make usage of environment variables.
+- Treeshake your code to only deploy the one that is being used.
+
+Welcome to your new **EZ CLASP** life 🚀
+
 ## ❓ How to
 
 ### 🥇 First usage
