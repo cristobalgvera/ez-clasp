@@ -1,4 +1,6 @@
-// Class approach
+/**
+ * Class approach
+ */
 export class ByeService {
   sayBye(name: string): string {
     return ByeService.sayBye(name);

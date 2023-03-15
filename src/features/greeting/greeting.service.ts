@@ -1,7 +1,9 @@
 import { EnvironmentService } from '@core/environment';
 import { ByeService } from '../bye';
 
-// Dependency Injection (ish) approach
+/**
+ * Dependency Injection (ish) approach
+ */
 export class GreetingService {
   constructor(
     private readonly byeService: ByeService,
