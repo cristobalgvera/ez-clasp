@@ -13,7 +13,7 @@
     "build": "rollup --config",
     "build:clean": "rimraf build/",
     "build:watch": "npm run build -- --watch",
-    "clasp:create": "rimraf .clasp.json && clasp create && prettier --write .clasp.json",
+    "clasp:create": "rimraf .clasp.json && clasp create --rootDir . --title CHANGE_MY_NAME && prettier --write .clasp.json",
     "clasp:login": "clasp login",
     "deploy": "npm run check:all && npm run build && npm run push",
     "format:check-all": "npm run format:check-file -- .",

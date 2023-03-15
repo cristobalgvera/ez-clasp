@@ -57,11 +57,6 @@ Welcome to your new **EZ CLASP** life 🚀
    to create a new project. CLASP CLI will prompt some project types, you
    should select one of them.
 
-   After you run this script, inside the created `.clasp.json` file, we strongly
-   recommend you to change the attribute `rootDir` value to `.`. This way you
-   can share with your teammates and move your project without any issues. This
-   is a Google CLASP CLI trouble.
-
 1. **If you have an existing project**, add your Apps Script ID inside
    [`.clasp.json`](./.clasp.json) in the **_scriptId_** key.
 
@@ -92,6 +87,9 @@ Welcome to your new **EZ CLASP** life 🚀
 
 1. **Test the code opening your
    [Google Apps Script projects dashboard](https://script.google.com/home/my)!**
+
+   There you can change your project name to the name you want (by default will
+   be called `CHANGE_MY_NAME`, in order to remember you to change it).
 
 ### 🤔 How to push HTML or non TypeScript files?
 
