@@ -42,12 +42,10 @@ describe('EnvironmentService', () => {
         process.env = {} as any;
       });
 
-      it('should throw an error', () => {
-        expect(() =>
-          underTest.get('MY_VALUE' as any),
-        ).toThrowErrorMatchingInlineSnapshot(
-          `"Environment variable MY_VALUE is not defined"`,
-        );
+      it('should return an undefined', () => {
+        const actual = underTest.get('NOT_DEFINED_VARIABLE' as any);
+
+        expect(actual).toBeUndefined();
       });
     });
   });

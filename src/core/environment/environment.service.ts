@@ -23,37 +23,11 @@ import { Environment } from './environment.type';
  */
 export class EnvironmentService {
   get<Key extends keyof Environment>(key: Key): Environment[Key] {
-    const value = this.getOrThrow(key);
+    const environment = {
+      MY_SECRET_VALUE: String(process.env.MY_SECRET_VALUE),
+      MY_SECRET_NUMBER: Number(process.env.MY_SECRET_NUMBER),
+    };
 
-    return this.parseEnvironmentVariable(value, key);
-  }
-
-  private getOrThrow(key: string): string {
-    function throwError(): never {
-      throw new ReferenceError(`Environment variable ${key} is not defined`);
-    }
-
-    switch (key) {
-      case 'MY_SECRET_VALUE':
-        return process.env.MY_SECRET_VALUE ?? throwError();
-      case 'MY_SECRET_NUMBER':
-        return process.env.MY_SECRET_NUMBER ?? throwError();
-    }
-
-    throwError();
-  }
-
-  private parseEnvironmentVariable<Key extends keyof Environment>(
-    value: string,
-    key: Key,
-  ): Environment[Key] {
-    switch (key) {
-      case 'MY_SECRET_VALUE':
-        return String(value) as Environment[Key];
-      case 'MY_SECRET_NUMBER':
-        return Number(value) as Environment[Key];
-    }
-
-    throw new ReferenceError(`Environment variable ${key} is not defined`);
+    return environment[key];
   }
 }
