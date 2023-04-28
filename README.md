@@ -267,3 +267,4 @@ help you to understand better how to link it to a Google Apps Script project:
   _(include connection to Firebase)_
 - **[Open Orders Update](https://github.com/cristobalgvera/open-orders-update)**
 - **[CMIC Credentials](https://github.com/cristobalgvera/cmic-credentials)**
+- **[Expeditures Projection](https://github.com/cristobalgvera/expeditures-projection)**
