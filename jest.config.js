@@ -3,7 +3,7 @@ const { compilerOptions } = require('./tsconfig');
 
 const COVERAGE_FILE_SUFFIX = ['service', 'controller', 'handler', 'util'];
 
-/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+/** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
 module.exports = {
   rootDir: '.',
   moduleFileExtensions: ['js', 'json', 'ts'],
