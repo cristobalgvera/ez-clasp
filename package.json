@@ -13,59 +13,41 @@
     "build": "rollup --config",
     "build:clean": "rimraf build/",
     "build:watch": "pnpm build --watch",
-    "clasp:create": "rimraf .clasp.json && clasp create --rootDir . --title CHANGE_MY_NAME && prettier --write .clasp.json",
+    "check:all": "pnpm lint --write && pnpm test",
+    "clasp:create": "rimraf .clasp.json && clasp create --rootDir . --title CHANGE_MY_NAME && pnpm lint --write .clasp.json",
     "clasp:login": "clasp login",
-    "deploy": "pnpm check:all && pnpm build && pnpm push",
-    "format:check-all": "pnpm format:check-file .",
-    "format:check-file": "prettier --check",
-    "format:fix-all": "pnpm format:fix-file .",
-    "format:fix-file": "prettier --write",
-    "lint:check-all": "pnpm lint:check-file .",
-    "lint:check-file": "eslint --ext ts --ext js --max-warnings 0",
-    "lint:fix-all": "pnpm lint:check-all --cache --fix",
-    "lint:fix-file": "pnpm lint:check-file --cache --fix",
+    "deploy": "npm run check:all && npm run build && npm run push",
+    "lint": "biome check",
     "prepare": "husky install",
     "push": "clasp push",
-    "push:watch": "pnpm push --watch",
     "test": "jest",
     "test:cov": "pnpm test --coverage",
-    "test:file": "pnpm test --bail --findRelatedTests --passWithNoTests",
-    "test:watch": "pnpm test --watch",
-    "check:all": "pnpm lint:check-all && pnpm format:check-all && pnpm types:check-all && pnpm test:cov",
-    "types:check-all": "tsc"
+    "test:watch": "pnpm test --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
     "@babel/plugin-transform-runtime": "^7.22.15",
     "@babel/preset-env": "^7.22.20",
     "@babel/preset-typescript": "^7.23.0",
+    "@biomejs/biome": "2.2.4",
     "@golevelup/ts-jest": "^0.4.0",
     "@google/clasp": "^2.4.2",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-node-resolve": "^15.2.1",
     "@rollup/plugin-typescript": "^11.1.4",
-    "@types/eslint": "^8.44.3",
     "@types/google-apps-script": "^1.0.72",
     "@types/jest": "^29.5.5",
     "@types/node": "^20.7.1",
-    "@typescript-eslint/eslint-plugin": "^6.7.3",
-    "@typescript-eslint/parser": "^6.7.3",
-    "eslint": "^8.50.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-jest": "^27.4.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "gts": "^5.0.1",
     "husky": "^8.0.3",
     "jest": "^29.7.0",
     "lint-staged": "^14.0.1",
-    "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "rollup": "^3.29.4",
     "rollup-plugin-dotenv": "^0.5.0",
     "ts-jest": "^29.1.1",
     "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "ultracite": "5.4.4"
   },
   "keywords": [
     "clasp",
@@ -79,5 +61,10 @@
     "babel",
     "husky",
     "lint-staged"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+      "pnpm dlx ultracite fix"
+    ]
+  }
 }

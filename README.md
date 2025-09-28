@@ -233,7 +233,7 @@ This project contain these libraries that will help you to have a better
 development experience:
 
 - **TypeScript** _(Development)_.
-- **ESLint** + **Prettier** _(Format and linting)_.
+- **Biome** + **Ultracite** _(Format and linting)_.
 - **Babel** + **Rollup** _(Building)_.
 - **Husky** + **Lint-Staged** _(Commit)_.
 - **Jest** _(Testing)_.
@@ -243,8 +243,8 @@ development experience:
 In order to improve commitment flow when working with teams, template has a pre
 configured Husky implementation. The pre-commit flow is:
 
-- Fix **ESLint** issues if possible.
-- Fix **Prettier** issues if possible.
+- Fix **linter** issues, when possible.
+- Fix **format** issues, when possible.
 - **Build** the code.
 
 All tasks but build run only for the staged changes.

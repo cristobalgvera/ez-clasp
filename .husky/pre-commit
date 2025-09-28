@@ -1,35 +1,34 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
 echo '🏗️👷 Styling, testing and building your project before committing'
 
-# Edit the command sequence in package.json
-npx lint-staged
+#!/bin/sh
+pnpm lint-staged
 
 echo '👷🏻 Building project...'
 
 # Build project
 npm run build || (
-        echo '🚨 👷🏻 Build try failed
+  echo '🚨 👷🏻 Build try failed
         
         Build process failed, please check the above errors.
 
         💡 You can also run `npm run build` to see the issues and fix them manually.
         '
-        false;
+  false
 )
 
 echo '✅ 👷🏻 Project built successfully. Removing build artifacts...'
 
 # Remove build artifacts
 npm run build:clean || (
-        echo '🚨 👷🏻 Build clean failed
+  echo '🚨 👷🏻 Build clean failed
         
         Build clean process failed, please check the above errors.
 
         💡 You can also run `npm run build:clean` to see the issues and fix them manually.
         '
-        false;
+  false
 )
 
 echo '✅ All validation checks passed. Commiting... 🤘🏻'

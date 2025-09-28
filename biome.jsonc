@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite"],
+  "linter": {
+    "rules": {
+      "correctness": {
+        "noUndeclaredVariables": "off" // Required to use globals like `SpreadsheetApp` in Google Apps Script
+      }
+    }
+  }
+}
