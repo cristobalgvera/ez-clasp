@@ -25,10 +25,10 @@ Welcome to your new **EZ CLASP** life 🚀
 1. Use [this template](https://github.com/cristobalgvera/ez-clasp) by clicking
    the **_"Use this template"_** button over repository files.
 
-   You can use `npx degit` way instead:
+   You can use `pnpx tiged` way instead:
 
    ```bash
-   npx degit cristobalgvera/ez-clasp YOUR_REPOSITORY_NAME
+   pnpx tiged cristobalgvera/ez-clasp YOUR_REPOSITORY_NAME
    ```
 
 1. Using the new created repository URL, clone it following next steps
@@ -39,21 +39,21 @@ Welcome to your new **EZ CLASP** life 🚀
    git clone https://github.com/YOUR_USER_NAME/YOUR_REPOSITORY_NAME.git
    cd YOUR_REPOSITORY_NAME
 
-   npm install
-   npm run clasp:login # And access to your Google account
+   pnpm install
+   pnpm clasp:login # And access to your Google account
    ```
 
-   If you used `npx degit` way:
+   If you used `pnpx tiged` way:
 
    ```bash
    cd YOUR_REPOSITORY_NAME
 
    git init
-   npm install
-   npm run clasp:login # And access to your Google account
+   pnpm install
+   pnpm clasp:login # And access to your Google account
    ```
 
-1. **If you DO NOT have an existing project**, run `npm run clasp:create`
+1. **If you DO NOT have an existing project**, run `pnpm clasp:create`
    to create a new project. CLASP CLI will prompt some project types, you
    should select one of them.
 
@@ -74,7 +74,7 @@ Welcome to your new **EZ CLASP** life 🚀
 1. Push your project to Google Apps Script using
 
    ```bash
-   npm run deploy
+   pnpm run deploy
    ```
 
    The **first time** you execute this command, CLASP CLI will ask you to
