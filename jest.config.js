@@ -1,20 +1,20 @@
-const { pathsToModuleNameMapper } = require('ts-jest');
-const { compilerOptions } = require('./tsconfig');
+const { pathsToModuleNameMapper } = require("ts-jest");
+const { compilerOptions } = require("./tsconfig");
 
-const COVERAGE_FILE_SUFFIX = ['service', 'controller', 'handler', 'util'];
+const COVERAGE_FILE_SUFFIX = ["service", "controller", "handler", "util"];
 
 /** @type {import('ts-jest/dist/types').JestConfigWithTsJest} */
 module.exports = {
-  rootDir: '.',
-  moduleFileExtensions: ['js', 'json', 'ts'],
-  testRegex: '.*\\.spec\\.ts$',
-  transform: { '^.+\\.ts$': 'ts-jest' },
-  collectCoverageFrom: [`**/*.(${COVERAGE_FILE_SUFFIX.join('|')}).ts`],
-  setupFilesAfterEnv: ['./test/env.setup.js'],
-  coverageDirectory: './coverage',
-  testEnvironment: 'node',
+  rootDir: ".",
+  moduleFileExtensions: ["js", "json", "ts"],
+  testRegex: ".*\\.spec\\.ts$",
+  transform: { "^.+\\.ts$": "ts-jest" },
+  collectCoverageFrom: [`**/*.(${COVERAGE_FILE_SUFFIX.join("|")}).ts`],
+  setupFilesAfterEnv: ["./test/env.setup.js"],
+  coverageDirectory: "./coverage",
+  testEnvironment: "node",
   // Helps to use aliases in tsconfig (@module/*)
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
-    prefix: '<rootDir>',
+    prefix: "<rootDir>",
   }),
 };

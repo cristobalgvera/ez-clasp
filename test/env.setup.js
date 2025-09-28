@@ -1,3 +1,5 @@
+/** biome-ignore-all lint/style/noMagicNumbers: Test-related file */
+
 /*
  * This file should contain any environment variables
  * that are explicitly required, e.g. variable that
@@ -11,5 +13,5 @@
  * if the variable is not set, and avoid that error when testing it.
  */
 
-process.env.MY_SECRET_VALUE = 'MY_SECRET_VALUE';
-process.env.MY_SECRET_NUMBER = 12345;
+process.env.MY_SECRET_VALUE = "MY_SECRET_VALUE";
+process.env.MY_SECRET_NUMBER = 12_345;

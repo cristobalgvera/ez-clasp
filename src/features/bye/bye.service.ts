@@ -7,14 +7,16 @@ export class ByeService {
   }
 
   static sayBye(name?: string): string {
-    return `Bye, ${name ?? 'World'}!`;
+    return `Bye, ${name ?? "World"}!`;
   }
 
   static sayByeAsync(name?: string): Promise<string> {
+    const timeToWait = 100;
+
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(this.sayBye(name));
-      }, 100);
+        resolve(ByeService.sayBye(name));
+      }, timeToWait);
     });
   }
 }

@@ -168,21 +168,21 @@ export class MyClassService {
 ```typescript
 // my-class.service.spec.ts
 
-import { createMock } from '@golevelup/ts-jest';
-import { MyClassService } from './my-class.service.ts';
+import { createMock } from "@golevelup/ts-jest";
+import { MyClassService } from "./my-class.service.ts";
 
-describe('MyClassService', () => {
+describe("MyClassService", () => {
   let underTest: MyClassService;
 
   beforeEach(() => {
     underTest = new MyClassService();
   });
 
-  describe('someMethodThatUseAnyGoogleService', () => {
+  describe("someMethodThatUseAnyGoogleService", () => {
     const originalService = global.GoogleService;
 
     let googleService: typeof GoogleService;
-    let childGoogleService: ReturnType<(typeof googleService)['anyMethod']>;
+    let childGoogleService: ReturnType<(typeof googleService)["anyMethod"]>;
 
     beforeEach(() => {
       childGoogleService = createMock<typeof childGoogleService>();
@@ -197,12 +197,12 @@ describe('MyClassService', () => {
       global.GoogleService = originalService;
     });
 
-    it('should call ChildGoogleService with correct parameters', () => {
-      const expected = { any: 'parameter' };
+    it("should call ChildGoogleService with correct parameters", () => {
+      const expected = { any: "parameter" };
 
       const childGoogleServiceSpy = jest.spyOn(
         childGoogleService,
-        'childMethod',
+        "childMethod",
       );
 
       underTest.someMethodThatUseAnyGoogleService(expected as any);
@@ -210,11 +210,11 @@ describe('MyClassService', () => {
       expect(childGoogleServiceSpy).toHaveBeenCalledWith(expected);
     });
 
-    it('should return the value', () => {
-      const expected = { any: 'parameter' };
+    it("should return the value", () => {
+      const expected = { any: "parameter" };
 
       jest
-        .spyOn(childGoogleService, 'childMethod')
+        .spyOn(childGoogleService, "childMethod")
         .mockReturnValueOnce(expected);
 
       const actual = underTest.someMethodThatUseAnyGoogleService({} as any);
